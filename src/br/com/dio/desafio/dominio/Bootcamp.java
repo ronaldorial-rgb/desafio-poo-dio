@@ -1,4 +1,5 @@
-package br.com.dio.desafio.dominio;
+
+    package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -14,6 +15,16 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
+    /**
+     * SOMA DO XP TOTAL:
+     * Percorre todos os conteúdos (Cursos/Mentorias) do bootcamp e soma o XP total.
+     * Serve de base para calcular a nota de desempenho (0 a 10) do aluno.
+     */
+    public double calcularXpTotalBootcamp() {
+        return this.conteudos.stream()
+                .mapToDouble(Conteudo::calcularXp)
+                .sum();
+    }
 
     public String getNome() {
         return nome;
@@ -55,16 +66,21 @@ public class Bootcamp {
         this.conteudos = conteudos;
     }
 
+    // CORREÇÃO: Removemos devsInscritos e conteudos do equals e hashCode.
+    // Assim, o Bootcamp mantém a mesma identidade mesmo quando novos alunos entram.
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(devsInscritos, bootcamp.devsInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
+        return Objects.equals(nome, bootcamp.nome) &&
+               Objects.equals(descricao, bootcamp.descricao) &&
+               Objects.equals(dataInicial, bootcamp.dataInicial) &&
+               Objects.equals(dataFinal, bootcamp.dataFinal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
+        return Objects.hash(nome, descricao, dataInicial, dataFinal);
     }
 }
