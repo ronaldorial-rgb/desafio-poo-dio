@@ -57,21 +57,14 @@ identificadores estáveis (`UUID` no Dev; `nome`/`descricao`/datas no
 Bootcamp) para evitar inconsistências quando esses objetos são usados
 dentro de coleções `Set`.
 
-### ▶️ Como executar
+ #▶️ Como executar
 
 ```bash
 javac Main.java br/com/dio/desafio/dominio/*.java -d out
 java -cp out Main
 
 
-
-
-
-
-
-
-
-
+l
 
 <h1> Desafio: Aprenda na Prática Programação Orientada a Objetos</h1>
 
