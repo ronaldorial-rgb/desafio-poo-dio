@@ -1,5 +1,5 @@
 
-# 🎯 Desafio: Aprendendo POO na Prática com Java
+# 🎯 FIZ O DESAFIO PROPOSTO PELA DIO😃🫂
 
 Este é meu fork do desafio **"Aprenda na Prática Programação Orientada a Objetos"**,
 co-criado pela DIO (Digital Innovation One) e pela cami-la.
